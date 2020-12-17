@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/Absurdponcho/PonchoOS/blob/main/kernel/bin/kernel.elf
+HostUrl=https://raw.githubusercontent.com/Absurdponcho/PonchoOS/main/kernel/bin/kernel.elf

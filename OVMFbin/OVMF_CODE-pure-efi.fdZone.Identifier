@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/Absurdponcho/PonchoOS/blob/main/OVMFbin/OVMF_CODE-pure-efi.fd
+HostUrl=https://raw.githubusercontent.com/Absurdponcho/PonchoOS/main/OVMFbin/OVMF_CODE-pure-efi.fd
