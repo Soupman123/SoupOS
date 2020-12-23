@@ -1,9 +1,10 @@
 #include <stdint.h>
 #include <stddef.h>
+#include <cpuid.h>
 #include "BasicRenderer.h"
 #include "cstr.h"
 #include "Bitmap.h"
-#include "PageFrameAllocator.h"
+#include "paging/PageFrameAllocator.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;
@@ -23,7 +24,6 @@ extern "C" void _start(BootInfo* bootInfo){
 
     PageFrameAllocator newAllocator;
     newAllocator.ReadEFIMemoryMap(bootInfo->mMap, bootInfo->mMapSize, bootInfo->mMapDescSize);
-
     uint64_t kernelSize = (uint64_t)&_KernelEnd - (uint64_t)&_KernelStart;
     uint64_t kernelPages = (uint64_t)kernelSize / 4096 + 1;
     newAllocator.LockPages(&_KernelStart, kernelPages);
@@ -41,12 +41,6 @@ extern "C" void _start(BootInfo* bootInfo){
     newRenderer.Print(to_string(newAllocator.GetReservedRAM() / 1024));
     newRenderer.Print(" KB ");
     newRenderer.CursorPosition = {0, newRenderer.CursorPosition.Y + 16};
-
-    for (int t = 0; t < 20; t++){
-        void* address = newAllocator.RequestPage();
-        newRenderer.Print(to_hstring((uint64_t)address));
-        newRenderer.CursorPosition = {0, newRenderer.CursorPosition.Y + 16};
-    }
 
     return;
 }
