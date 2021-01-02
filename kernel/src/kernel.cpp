@@ -1,67 +1,14 @@
-#include <stdint.h>
-#include <stddef.h>
-#include <cpuid.h>
-#include "BasicRenderer.h"
-#include "cstr.h"
-#include "Bitmap.h"
-#include "paging/PageFrameAllocator.h"
-#include "paging/PageMapIndexer.h"
-#include "paging/paging.h"
-#include "paging/PageTableManager.h"
-
-struct BootInfo{
-	Framebuffer* framebuffer;
-	PSF1_FONT* psf1_Font;
-	EFI_MEMORY_DESCRIPTOR* mMap;
-	uint64_t mMapSize;
-	uint64_t mMapDescSize;
-};
-
-extern uint64_t _KernelStart;
-extern uint64_t _KernelEnd;
+#include "KernelUtil.h"
 
 extern "C" void _start(BootInfo* bootInfo){
+    // Run Kernel Utilities
+    KernelInfo KernelInfo = InitializeKernel(bootInfo);
+    PageTableManager* pageTableManager = KernelInfo.pageTableManager;
 
-    // Text Rendering
+    // Set Up Text Rendering
     BasicRenderer newRenderer = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font);
 
-    // Memory Map
-    GlobalAllocator = PageFrameAllocator();
-    uint64_t mMapEntries = bootInfo->mMapSize / bootInfo->mMapDescSize;
-    GlobalAllocator.ReadEFIMemoryMap(bootInfo->mMap, bootInfo->mMapSize, bootInfo->mMapDescSize);
-    uint64_t kernelSize = (uint64_t)&_KernelEnd - (uint64_t)&_KernelStart;
-    uint64_t kernelPages = (uint64_t)kernelSize / 4096 + 1;
-    GlobalAllocator.LockPages(&_KernelStart, kernelPages);
+    newRenderer.Print("Kernel Initialized Successfully");
 
-    // Map Pages
-    PageTable* PML4 = (PageTable*)GlobalAllocator.RequestPage();
-    memset(PML4, 0, 0x1000);
-    PageTableManager pageTableManager = PageTableManager(PML4);
-    for (uint64_t t = 0; t < GetMemorySize(bootInfo->mMap, mMapEntries, bootInfo->mMapDescSize); t+=0x1000) {
-        pageTableManager.MapMemory((void*)t, (void*)t);
-    }
-
-    // Remap Framebuffer
-    uint64_t fbBase = (uint64_t)bootInfo->framebuffer->BaseAddress;
-    uint64_t fbSize = (uint64_t)bootInfo->framebuffer->BufferSize + 0x1000;
-    GlobalAllocator.LockPages((void*)fbBase, fbSize/0x1000 + 1);
-    for (uint64_t t = fbBase; t < fbBase + fbSize; t+=4096)
-    {
-        pageTableManager.MapMemory((void*)t, (void*)t);
-    }
-    asm ("mov %0, %%cr3" : : "r" (PML4));
-
-    // Clear Screen
-    memset(bootInfo->framebuffer->BaseAddress, 0, bootInfo->framebuffer->BufferSize);
-
-    pageTableManager.MapMemory((void*)0x600000000, (void*)0x80000);
-
-    uint64_t* test = (uint64_t*)0x600000000;
-    *test = 26;
-
-    newRenderer.Print(to_string(*test));
-
-    //newRenderer.Print("Im in the new page map!");
-
-    return;
+    while(true);
 }
