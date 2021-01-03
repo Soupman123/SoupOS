@@ -10,6 +10,7 @@
 #include "paging/PageMapIndexer.h"
 #include "paging/paging.h"
 #include "paging/PageTableManager.h"
+#include "gdt/gdt.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;
