@@ -5,10 +5,10 @@ extern "C" void _start(BootInfo* bootInfo){
     KernelInfo KernelInfo = InitializeKernel(bootInfo);
     PageTableManager* pageTableManager = KernelInfo.pageTableManager;
 
-    // Set Up Text Rendering
-    BasicRenderer newRenderer = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font);
+    GlobalRenderer->Print("Kernel Initialized Successfully");
 
-    newRenderer.Print("Kernel Initialized Successfully");
+    int* test = (int*)0x80000000000;
+    *test = 2;
 
     while(true);
 }

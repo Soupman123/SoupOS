@@ -13,3 +13,5 @@ class BasicRenderer{
     void Print(const char* str);
     void PutChar(char chr, unsigned int xOff, unsigned int yOff);
 };
+
+extern BasicRenderer* GlobalRenderer;
