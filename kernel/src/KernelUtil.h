@@ -13,6 +13,7 @@
 #include "gdt/gdt.h"
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
+#include "IO.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;
