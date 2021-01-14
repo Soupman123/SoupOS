@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdint.h>
 #include <stddef.h>
 #include <cpuid.h>
@@ -14,6 +13,7 @@
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
 #include "IO.h"
+#include "interrupts/Drivers/Keyboard/keyboard.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;

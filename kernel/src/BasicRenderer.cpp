@@ -53,3 +53,12 @@ void BasicRenderer::PutChar(char chr, unsigned int xOff, unsigned int yOff){
         fontPtr++;
     }
 }
+
+void BasicRenderer::ClearChar(unsigned int BColor, unsigned int xOff, unsigned int yOff){
+    unsigned int* pixPtr = (unsigned int*)TargetFramebuffer->BaseAddress;
+    for (unsigned long y = yOff; y < yOff + 16; y++){
+        for (unsigned long x = xOff; x < xOff + 8; x++){
+            *(unsigned int*)(pixPtr + x + (y * TargetFramebuffer->PixelsPerScanLine)) = BColor;
+        }
+    }
+}

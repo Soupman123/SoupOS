@@ -1,7 +1,5 @@
 #include "interrupts.h"
-#include "../panic.h"
-#include "../IO.h"
-#include "KBScanCodeSet1.cpp"
+
 
 __attribute__((interrupt)) void PageFault_Handler(struct interrupt_frame* frame){
     Panic("Page_Fault_Detected");
@@ -20,18 +18,16 @@ __attribute__((interrupt)) void GPFault_Handler(struct interrupt_frame* frame){
 
 __attribute__((interrupt)) void KeyboardInt_Handler(struct interrupt_frame* frame){
     uint8_t scancode = inb(0x60);
-    uint8_t chr = 0;
-
-	if (scancode < 0x3A){
-        GlobalRenderer->PutChar(KBSet1::ScanCodeLookupTable[scancode], GlobalRenderer->CursorPosition.X, GlobalRenderer->CursorPosition.Y);
-        GlobalRenderer->CursorPosition.X+=8;
-        if(GlobalRenderer->CursorPosition.X + 8 > GlobalRenderer->TargetFramebuffer->Width){
-            GlobalRenderer->CursorPosition.X = 0;
-            GlobalRenderer->CursorPosition.Y += 16;
-        }
-	}
+    HandleKeyboard(scancode);
     PIC_EndMaster();
 }
+
+__attribute__((interrupt)) void MouseInt_Handler(struct interrupt_frame* frame){
+    uint8_t scancode = inb(0x60);
+    HandleMouse(scancode);
+    PIC_EndMaster();
+}
+
 
 void PIC_EndMaster(){
     outb(PIC1_COMMAND, PIC_EOI);
