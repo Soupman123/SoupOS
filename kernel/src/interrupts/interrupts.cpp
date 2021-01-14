@@ -22,12 +22,6 @@ __attribute__((interrupt)) void KeyboardInt_Handler(struct interrupt_frame* fram
     PIC_EndMaster();
 }
 
-__attribute__((interrupt)) void MouseInt_Handler(struct interrupt_frame* frame){
-    uint8_t scancode = inb(0x60);
-    HandleMouse(scancode);
-    PIC_EndMaster();
-}
-
 
 void PIC_EndMaster(){
     outb(PIC1_COMMAND, PIC_EOI);

@@ -42,6 +42,8 @@ void BasicRenderer::Print(const char* str){
 }
 
 void BasicRenderer::PutChar(char chr, unsigned int xOff, unsigned int yOff){
+    if(xOff<0){xOff = 0;}
+    if(yOff<0){yOff = 0;}
     unsigned int* pixPtr = (unsigned int*)TargetFramebuffer->BaseAddress;
     char* fontPtr = (char*)PSF1_Font->glyphBuffer + (chr * PSF1_Font->psf1_Header->charsize);
     for (unsigned long y = yOff; y < yOff + 16; y++){
@@ -54,7 +56,27 @@ void BasicRenderer::PutChar(char chr, unsigned int xOff, unsigned int yOff){
     }
 }
 
+void BasicRenderer::PutCharF(char chr, unsigned int BColor, unsigned int xOff, unsigned int yOff){
+    if(xOff<0){xOff = 0;}
+    if(yOff<0){yOff = 0;}
+    unsigned int* pixPtr = (unsigned int*)TargetFramebuffer->BaseAddress;
+    char* fontPtr = (char*)PSF1_Font->glyphBuffer + (chr * PSF1_Font->psf1_Header->charsize);
+    for (unsigned long y = yOff; y < yOff + 16; y++){
+        for (unsigned long x = xOff; x < xOff + 8; x++){
+            if ((*fontPtr & (0b10000000 >> (x - xOff))) > 0){
+                *(unsigned int*)(pixPtr + x + (y * TargetFramebuffer->PixelsPerScanLine)) = Color;
+            }
+            else{
+                *(unsigned int*)(pixPtr + x + (y * TargetFramebuffer->PixelsPerScanLine)) = BColor;
+            }
+        }
+        fontPtr++;
+    }
+}
+
 void BasicRenderer::ClearChar(unsigned int BColor, unsigned int xOff, unsigned int yOff){
+    if(xOff<0){xOff = 0;}
+    if(yOff<0){yOff = 0;}
     unsigned int* pixPtr = (unsigned int*)TargetFramebuffer->BaseAddress;
     for (unsigned long y = yOff; y < yOff + 16; y++){
         for (unsigned long x = xOff; x < xOff + 8; x++){

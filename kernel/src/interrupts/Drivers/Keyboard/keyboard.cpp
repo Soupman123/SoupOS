@@ -17,7 +17,7 @@ void HandleKeyboard(uint8_t scancode) {
 		switch (scancode) {
 		case 0x0E:
 			GlobalRenderer->ClearChar(0x000000, GlobalRenderer->CursorPosition.X - 8, GlobalRenderer->CursorPosition.Y);
-			GlobalRenderer->CursorPosition.X -= 8;
+            GlobalRenderer->CursorPosition.X -= 8;
 			break;
 		case 0x2A:
 			if (upper) {upper = false;}
@@ -44,7 +44,7 @@ void HandleKeyboard(uint8_t scancode) {
 
         default:
             if (scancode < 0x3A){
-                GlobalRenderer->PutChar(chr, GlobalRenderer->CursorPosition.X, GlobalRenderer->CursorPosition.Y);
+                GlobalRenderer->PutCharF(chr, 0, GlobalRenderer->CursorPosition.X, GlobalRenderer->CursorPosition.Y);
                 GlobalRenderer->CursorPosition.X+=8;
                 if(GlobalRenderer->CursorPosition.X + 8 > GlobalRenderer->TargetFramebuffer->Width){
                     GlobalRenderer->CursorPosition.X = 0;

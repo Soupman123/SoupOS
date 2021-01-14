@@ -13,6 +13,7 @@ class BasicRenderer{
     unsigned int Color;
     void Print(const char* str);
     void PutChar(char chr, unsigned int xOff, unsigned int yOff);
+    void PutCharF(char chr, unsigned int BColor, unsigned int xOff, unsigned int yOff);
     void ClearChar(unsigned int BColor, unsigned int xOff, unsigned int yOff);
     void Clear(uint32_t color);
     void Next();
