@@ -70,10 +70,14 @@ void PrepareInterrupts(){
 
 }
 
-BasicRenderer r = BasicRenderer(NULL, NULL);
+
+BasicRenderer r = BasicRenderer(NULL, NULL); // old
+Renderer f = Renderer(NULL); // new
 KernelInfo InitializeKernel(BootInfo* bootInfo){
-    r = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font);
-    GlobalRenderer = &r;
+    r = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font); //old
+    f = Renderer(bootInfo->framebuffer); //new
+    GlobalRenderer = &r; //old
+    renderer = &f; //new
 
     GDTDescriptor gdtDescriptor;
     gdtDescriptor.Size = sizeof(GDT) - 1;

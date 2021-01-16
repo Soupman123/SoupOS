@@ -15,6 +15,8 @@
 #include "IO.h"
 #include "interrupts/Drivers/Keyboard/keyboard.h"
 
+#include "UI/Rendering/Rendering.h"
+
 struct BootInfo{
 	Framebuffer* framebuffer;
 	PSF1_FONT* psf1_Font;
