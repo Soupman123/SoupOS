@@ -13,7 +13,6 @@
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
 #include "IO.h"
-#include "interrupts/Drivers/Keyboard/keyboard.h"
 
 #include "UI/Rendering/Rendering.h"
 

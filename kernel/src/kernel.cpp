@@ -7,7 +7,7 @@ extern "C" void _start(BootInfo* bootInfo){
 
     GlobalRenderer->Print("Kernel Initialized Successfully");
 
-    renderer->line({100,100}, {400, 0}, 0xFFFFFF);
+    renderer->rect({100,100}, {200, 200}, 0xFFFFFF);
     
     while(true);
 }

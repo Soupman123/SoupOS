@@ -1,4 +1,7 @@
 #include "interrupts.h"
+#include "../panic.h"
+#include "../IO.h"
+#include "../userinput/keyboard.h"
 
 
 __attribute__((interrupt)) void PageFault_Handler(struct interrupt_frame* frame){
@@ -18,7 +21,9 @@ __attribute__((interrupt)) void GPFault_Handler(struct interrupt_frame* frame){
 
 __attribute__((interrupt)) void KeyboardInt_Handler(struct interrupt_frame* frame){
     uint8_t scancode = inb(0x60);
+
     HandleKeyboard(scancode);
+
     PIC_EndMaster();
 }
 

@@ -8,7 +8,7 @@ class Renderer{
     Renderer(Framebuffer* framebufferArg);
     void set_at(Point point, unsigned int color);
     unsigned int get_at(Point point);
-    void line(Point StartPoint, Point EndPoint, unsigned int color);
+    void rect(Point StartPoint, Point EndPoint, unsigned int color);
     private:
     Framebuffer* framebuffer;
     int gcd(int a, int b);

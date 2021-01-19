@@ -2,12 +2,13 @@
 #include "BasicRenderer.h"
 
 void Panic(const char* panicMessage){
-    GlobalRenderer->Clear(0x1a2040);
+    GlobalRenderer->ClearColor = 0x1a2040;
+    GlobalRenderer->Clear();
 
     GlobalRenderer->CursorPosition = {0, 0};
 
     GlobalRenderer->Color = 0xFFFFFF;
 
-    GlobalRenderer->Print("SoupOS has encountered an issue, please restart your machine :(. ERR_CODE: ");
+    GlobalRenderer->Print("SoupOS has encountered an issue, please restart your machine. :( ERR_CODE: ");
     GlobalRenderer->Print(panicMessage);
 } 
