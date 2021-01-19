@@ -9,9 +9,9 @@ class Renderer{
     void set_at(Point point, unsigned int color);
     unsigned int get_at(Point point);
     void rect(Point StartPoint, Point EndPoint, unsigned int color);
+    void line(Point StartPoint, Point EndPoint, unsigned int color);
     private:
     Framebuffer* framebuffer;
-    int gcd(int a, int b);
 };
 
 extern Renderer* renderer;
