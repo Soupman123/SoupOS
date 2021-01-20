@@ -12,6 +12,7 @@ class Renderer{
     void line(Point StartPoint, Point EndPoint, unsigned int color);
     void clear(unsigned int color=0);
     void quadBezier(Point Start, Point Control, Point End, unsigned int color);
+    void cubeBezier(Point Start, Point Control1, Point Control2, Point End, unsigned int color);
     private:
     Framebuffer* framebuffer;
     int getPt(int n1,int n2,float perc);
