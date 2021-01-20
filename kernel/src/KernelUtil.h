@@ -14,7 +14,7 @@
 #include "interrupts/interrupts.h"
 #include "IO.h"
 
-#include "UI/Rendering/Rendering.h"
+#include "rendering/Rendering.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;

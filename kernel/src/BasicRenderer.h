@@ -1,6 +1,6 @@
 #pragma once
 #include "math.h"
-#include "UI/Rendering/Framebuffer.h"
+#include "rendering/Framebuffer.h"
 #include "simpleFonts.h"
 #include <stdint.h>
 
