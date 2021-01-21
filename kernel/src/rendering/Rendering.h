@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include "Framebuffer.h"
 #include "../math.h"
+#include "../memory.h"
 
 class Renderer{
     public:
@@ -13,8 +14,11 @@ class Renderer{
     void clear(unsigned int color=0);
     void quadBezier(Point Start, Point Control, Point End, unsigned int color);
     void cubeBezier(Point Start, Point Control1, Point Control2, Point End, unsigned int color);
-    private:
+    void update();
     Framebuffer* framebuffer;
+    void InitDoubleBuffer(Framebuffer* f);
+    private:
+    Framebuffer* PriFramebuffer;
     int getPt(int n1,int n2,float perc);
 };
 

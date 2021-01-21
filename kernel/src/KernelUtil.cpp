@@ -76,8 +76,16 @@ Renderer f = Renderer(NULL); // new
 KernelInfo InitializeKernel(BootInfo* bootInfo){
     r = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font); //old
     f = Renderer(bootInfo->framebuffer); //new
+    Framebuffer* doubleBuffer;
+    doubleBuffer->BaseAddress = GlobalAllocator.RequestPage();
+	doubleBuffer->BufferSize = bootInfo->framebuffer->BufferSize;
+	doubleBuffer->Height = bootInfo->framebuffer->Height;
+	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;
+	doubleBuffer->Width = bootInfo->framebuffer->Width;
+	GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
     GlobalRenderer = &r; //old
     renderer = &f; //new
+    renderer->InitDoubleBuffer(doubleBuffer);
 
     GDTDescriptor gdtDescriptor;
     gdtDescriptor.Size = sizeof(GDT) - 1;

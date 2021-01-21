@@ -7,7 +7,7 @@ int Renderer::getPt(int n1,int n2,float perc){return n1+((n2-n1)*perc);}
 
 //public
 Renderer::Renderer(Framebuffer* framebufferArg){
-    framebuffer=framebufferArg;
+    PriFramebuffer=framebufferArg;
 }
 
 void Renderer::set_at(Point point,unsigned int color){
@@ -105,4 +105,12 @@ void Renderer::cubeBezier(Point Start, Point Control1, Point Control2, Point End
         line(prev,{x,y},color);
         prev={x,y};
     }
+}
+
+void Renderer::update() {
+	memcpy(PriFramebuffer->BaseAddress,framebuffer->BaseAddress,PriFramebuffer->BufferSize);
+}
+
+void Renderer::InitDoubleBuffer(Framebuffer* f) {
+	framebuffer = f;
 }

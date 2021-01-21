@@ -13,6 +13,7 @@
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
 #include "IO.h"
+#include "rendering/Framebuffer.h"
 
 #include "rendering/Rendering.h"
 
