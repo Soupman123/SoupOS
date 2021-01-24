@@ -63,6 +63,19 @@ void* PageFrameAllocator::RequestPage(){
     return NULL; // do pageswap to file
 }
 
+void* PageFrameAllocator::RequestPages(uint64_t pageCount){
+    uint64_t i = 0;
+    for (uint64_t pageBitmapIndex = 0; pageBitmapIndex < PageBitmap.Size * 8; pageBitmapIndex++){
+        if(PageBitmap[pageBitmapIndex] == false){i++;}
+        else{i = 0;}
+        if(i==pageCount){
+            LockPages((void*)(pageBitmapIndex * 4096), pageCount);
+            return (void*)(pageBitmapIndex * 4096);
+        }
+        
+    }
+}
+
 void PageFrameAllocator::FreePage(void* address){
     uint64_t index = (uint64_t)address / 4096;
     if (PageBitmap[index] == false) return;

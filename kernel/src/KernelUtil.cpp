@@ -32,6 +32,9 @@ void PrepareMemory(BootInfo* bootInfo){
     asm ("mov %0, %%cr3" : : "r" (PML4));
 
     kernelInfo.pageTableManager = &pageTableManager;
+
+    // This code im about to write is so utterly fucking bad, that im begging whoever is reading this to forgive me.
+    GlobalAllocator.LockPages((void*)0, 0x100);
 }
 
 IDTR idtr;
@@ -76,16 +79,8 @@ Renderer f = Renderer(NULL); // new
 KernelInfo InitializeKernel(BootInfo* bootInfo){
     r = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font); //old
     f = Renderer(bootInfo->framebuffer); //new
-    Framebuffer* doubleBuffer;
-    doubleBuffer->BaseAddress = GlobalAllocator.RequestPage();
-	doubleBuffer->BufferSize = bootInfo->framebuffer->BufferSize;
-	doubleBuffer->Height = bootInfo->framebuffer->Height;
-	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;
-	doubleBuffer->Width = bootInfo->framebuffer->Width;
-	GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
     GlobalRenderer = &r; //old
     renderer = &f; //new
-    renderer->InitDoubleBuffer(doubleBuffer);
 
     GDTDescriptor gdtDescriptor;
     gdtDescriptor.Size = sizeof(GDT) - 1;
@@ -93,6 +88,15 @@ KernelInfo InitializeKernel(BootInfo* bootInfo){
     LoadGDT(&gdtDescriptor);
 
     PrepareMemory(bootInfo);
+
+    Framebuffer* doubleBuffer;
+    doubleBuffer->BaseAddress = GlobalAllocator.RequestPage();
+	doubleBuffer->BufferSize = bootInfo->framebuffer->BufferSize;
+	doubleBuffer->Height = bootInfo->framebuffer->Height;
+	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;
+	doubleBuffer->Width = bootInfo->framebuffer->Width;
+    GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
+    renderer->InitDoubleBuffer(doubleBuffer);
 
     memset(bootInfo->framebuffer->BaseAddress, 0, bootInfo->framebuffer->BufferSize);
 

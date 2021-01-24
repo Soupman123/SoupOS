@@ -5,7 +5,7 @@ extern "C" void _start(BootInfo* bootInfo){
     KernelInfo KernelInfo = InitializeKernel(bootInfo);
     PageTableManager* pageTableManager = KernelInfo.pageTableManager;
 
-    renderer->clear(0x222940);
+    renderer->clear(0x0);
     GlobalRenderer->Print("Kernel Initialized Successfully");
 
     renderer->rect({100, 100}, {200, 200}, 0xFFFFFF);
