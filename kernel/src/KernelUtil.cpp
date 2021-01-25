@@ -90,7 +90,7 @@ KernelInfo InitializeKernel(BootInfo* bootInfo){
     PrepareMemory(bootInfo);
 
     Framebuffer* doubleBuffer;
-    doubleBuffer->BaseAddress = GlobalAllocator.RequestPage();
+    doubleBuffer->BaseAddress = GlobalAllocator.RequestPages((bootInfo->framebuffer->BufferSize<4096)?1:bootInfo->framebuffer->BufferSize/4096);
 	doubleBuffer->BufferSize = bootInfo->framebuffer->BufferSize;
 	doubleBuffer->Height = bootInfo->framebuffer->Height;
 	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;

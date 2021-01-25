@@ -1,7 +1,6 @@
 #pragma once
 #include <stdint.h>
 #include <stddef.h>
-#include <cpuid.h>
 #include "BasicRenderer.h"
 #include "cstr.h"
 #include "Bitmap.h"
@@ -14,6 +13,7 @@
 #include "interrupts/interrupts.h"
 #include "IO.h"
 #include "rendering/Framebuffer.h"
+#include "cpu/cpu.h"
 
 #include "rendering/Rendering.h"
 
