@@ -70,10 +70,10 @@ void* PageFrameAllocator::RequestPages(uint64_t pageCount){
         else{i = 0;}
         if(i==pageCount){
             LockPages((void*)(pageBitmapIndex * 4096), pageCount);
-            return (void*)(pageBitmapIndex * 4096);
+            return (void*)((pageBitmapIndex * 4096) - (pageCount * 4096));
         }
-        
     }
+    return NULL;
 }
 
 void PageFrameAllocator::FreePage(void* address){
