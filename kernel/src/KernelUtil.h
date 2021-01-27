@@ -1,7 +1,6 @@
 #pragma once
 #include <stdint.h>
 #include <stddef.h>
-#include "BasicRenderer.h"
 #include "cstr.h"
 #include "Bitmap.h"
 #include "paging/PageFrameAllocator.h"
@@ -12,10 +11,10 @@
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
 #include "IO.h"
-#include "rendering/Framebuffer.h"
-#include "cpu/cpu.h"
-
-#include "rendering/Rendering.h"
+#include "drivers/display/Framebuffer.h"
+#include "drivers/display/Rendering.h"
+#include "drivers/mouse/mouse.h"
+#include "drivers/cpu/cpu.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;
@@ -31,5 +30,8 @@ extern uint64_t _KernelEnd;
 struct KernelInfo {
     PageTableManager* pageTableManager;
 };
+
+//CPU cpu;
+//char** CPUFeatures = cpu.getFeatures();
 
 KernelInfo InitializeKernel(BootInfo* bootInfo);

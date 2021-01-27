@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"debug.onTaskErrors": "debugAnyway",
+		"files.associations": {
+			"type_traits": "cpp"
+		}
+	}
+}

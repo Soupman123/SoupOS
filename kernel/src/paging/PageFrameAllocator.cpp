@@ -33,7 +33,7 @@ void PageFrameAllocator::ReadEFIMemoryMap(EFI_MEMORY_DESCRIPTOR* mMap, size_t mM
 
     InitBitmap(bitmapSize, largestFreeMemSeg);
 
-    LockPages(&PageBitmap, PageBitmap.Size / 4096 + 1);
+    LockPages(PageBitmap.Buffer, PageBitmap.Size / 4096 + 1);
     for (int i = 0; i < mMapEntries; i++){
         EFI_MEMORY_DESCRIPTOR* desc = (EFI_MEMORY_DESCRIPTOR*)((uint64_t)mMap + (i * mMapDescSize));
         if (desc->type != 7){ // type != EfiConventionalMemory
@@ -64,7 +64,16 @@ void* PageFrameAllocator::RequestPage(){
 }
 
 void* PageFrameAllocator::RequestPages(uint64_t pageCount){
-    //fixmepls
+    uint64_t i = 0;
+    for (uint64_t pageBitmapIndex = 0; pageBitmapIndex < PageBitmap.Size * 8; pageBitmapIndex++){
+        if(PageBitmap[pageBitmapIndex] == false){i++;}
+        else{i = 0;}
+        if(i==pageCount){
+            LockPages((void*)((pageBitmapIndex-i+1) * 4096), pageCount);
+            return (void*)((pageBitmapIndex-i) * 4096);
+        }
+    }
+    return NULL;
 }
 
 void PageFrameAllocator::FreePage(void* address){
