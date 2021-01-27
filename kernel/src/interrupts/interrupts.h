@@ -1,7 +1,7 @@
   #pragma once
 #include "../drivers/display/Rendering.h"
 #include "../panic.h"
-#include "../IO.h"
+#include "../io/IO.h"
 #include "../drivers/keyboard/keyboard.h"
 #include "../drivers/mouse/mouse.h"
 

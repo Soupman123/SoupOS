@@ -10,6 +10,7 @@ Renderer::Renderer(Framebuffer* framebufferPri, Framebuffer* framebufferSec, PSF
     PriFramebuffer=framebufferPri;
     framebuffer=framebufferSec;
     font=psf1_Font;
+    textCursorPosition = {0,0};
 }
 
 void Renderer::set_at(Point point,unsigned int color){
@@ -169,7 +170,8 @@ void Renderer::PutChar(char chr, unsigned int xOff, unsigned int yOff){
     }
 }
 
-void Renderer::PutChar(char chr){
+void Renderer::PutChar(char chr)
+{
     PutChar(chr, textCursorPosition.X, textCursorPosition.Y);
     textCursorPosition.X += 8;
     if (textCursorPosition.X + 8 > framebuffer->Width){

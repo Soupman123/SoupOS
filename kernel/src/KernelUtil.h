@@ -10,11 +10,12 @@
 #include "gdt/gdt.h"
 #include "interrupts/IDT.h"
 #include "interrupts/interrupts.h"
-#include "IO.h"
+#include "io/IO.h"
 #include "drivers/display/Framebuffer.h"
 #include "drivers/display/Rendering.h"
 #include "drivers/mouse/mouse.h"
 #include "drivers/cpu/cpu.h"
+#include "drivers/clock/clock.h"
 
 struct BootInfo{
 	Framebuffer* framebuffer;
@@ -27,11 +28,11 @@ struct BootInfo{
 extern uint64_t _KernelStart;
 extern uint64_t _KernelEnd;
 
+CPU cpu;
+Clock rtc;
+
 struct KernelInfo {
     PageTableManager* pageTableManager;
 };
-
-//CPU cpu;
-//char** CPUFeatures = cpu.getFeatures();
 
 KernelInfo InitializeKernel(BootInfo* bootInfo);

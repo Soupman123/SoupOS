@@ -34,7 +34,7 @@ char** CPU::getFeatures() {
     uint32_t eax, ebx, ecx, edx, standardfunc;
     char* tmp[13];
     cpuid(0, &standardfunc, (uint32_t *)(tmp + 0), (uint32_t *)(tmp + 8), (uint32_t *)(tmp + 4));
-    
+
     if(standardfunc >= 1) {
         cpuid(1,&eax,&ebx,&ecx,&edx);
 
@@ -97,6 +97,6 @@ char** CPU::getFeatures() {
         if(edx & EDX_TM) addSupported("TM");
         if(edx & EDX_PBE) addSupported("PBE");
     } 
-    
+
     return features;
-}
+} 

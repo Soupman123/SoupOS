@@ -60,15 +60,15 @@
 #define EDX_TM                          (1 << 29)   // Thermal Monitor
 #define EDX_PBE                         (1 << 31)   // Pending Break Enable
 
-class CPU{
+class CPU
+{
 private:
-void addSupported(const char* sup);
-char* features[64];
+    void addSupported(const char* sup);
+    char* features[64];
 public:
     inline void cpuid(uint32_t reg, uint32_t *eax, uint32_t *ebx, uint32_t *ecx, uint32_t *edx);
     char* getName();
     char* getVendor();
     char** getFeatures();
     int cpuFeatures = 0;
-    
-};
+}; 
