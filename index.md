@@ -25,6 +25,3 @@ Double buffering
 USB support
 Advanced shape rendering
 ```
-
-sidebar:
-  nav: "docs"
