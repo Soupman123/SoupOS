@@ -8,7 +8,7 @@ SoupOS is a operating system using a UEFI bootloader, but does not have any main
 
 ### Downloads
 
-You can download the operating system compiled image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img).
+You can download the operating system compiled image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img).\n
 You can also download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip).
 
 ### Credits
