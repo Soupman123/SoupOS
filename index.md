@@ -16,6 +16,7 @@ You can also download the source code [here](https://github.com/Soupman123/SoupO
 
 ### Credits
 Thanks to [Poncho](https://github.com/Absurdponcho/) for helping get me into OSdev and for providing great educational resources.
+Soup#plsfixthis on [Discord](https://discord.com)
 
 ### Future
 These are the features that are planned to be added in the near future.
