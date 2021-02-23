@@ -1,16 +1,14 @@
 docs_list_title: Documentation
 toc:
-  - title: Group 1
-    url: /thing1.html
+  - title: Introduction
     subfolderitems:
-      - page: Thing 1
-        url: /thing1.html
+      - page: What is SoupOS?
+        url: /#What+is+SoupOS%3F
       - page: Thing 2
         url: /thing2.html
       - page: Thing 3
         url: /thing3.html
   - title: Group 2
-    url: /thing1.html
     subfolderitems:
       - page: Piece 1
         url: /piece1.html
@@ -19,7 +17,6 @@ toc:
       - page: Piece 3
         url: /piece3.html
   - title: Group 3
-    url: /thing1.html
     subfolderitems:
       - page: Widget 1
         url: /widget1.html
