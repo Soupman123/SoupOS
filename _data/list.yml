@@ -18,6 +18,8 @@ toc:
         url: /piece3.html
   - title: Miscellaneous
     subfolderitems:
+      - page: Credits
+        url: /#credits
       - page: Support
         url: /#support
       - page: Legal
