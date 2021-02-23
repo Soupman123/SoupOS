@@ -31,13 +31,13 @@ Simple text rendering
 PCI Devices
 ```
 
-### How can I get involved / started?
+### How can I get involved / started? <a href="#link-has-been-copied" onclick="copyToClipboard('#how-can-i-get-involved--started');"><i>#</i></a>
 To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development. You can also support this project over in [support](#support)
 
-### Support
+### Support <a href="#link-has-been-copied" onclick="copyToClipboard('#support');"><i>#</i></a>
 Currently you can support this project via staring this project on [github](https://github.com/Soupman123/SoupOS/), but more support options are coming soon.
 
-### Legal
+### Legal <a href="#link-has-been-copied" onclick="copyToClipboard('#legal');"><i>#</i></a>
 ```
 “Soupman” License Condition v1.0, derived from the “Commons Clause” 
 License Condition v1.0
