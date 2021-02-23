@@ -2,10 +2,10 @@ docs_list_title: Documentation
 docs:
 
 - title: Introduction
-  url: /#introduction
+  url: //#introduction
 
 - title: Installing
-  url: /#download
+  url: //#download
 
 - title: Deployment
-  url: /#introduction
+  url: //#introduction
