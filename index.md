@@ -21,19 +21,7 @@ PCI Devices
 ```
 
 ### How can I get involved / started?
-To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you wouldlike to learn more about operating system development.
-
-### Credits
-Thanks to [Poncho](https://github.com/Absurdponcho/) for helping get me into OSdev and for providing great educational resources.
-[Soup#9370](https://discord.com/users/698622052059316285/) on [Discord](https://discord.com)
-
-### Future
-These are the features that are planned to be added in the near future.
-```
-Double buffering
-USB support
-Advanced shape rendering
-```
+To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development.
 
 ### Legal
 
