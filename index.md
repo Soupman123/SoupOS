@@ -25,3 +25,9 @@ Double buffering
 USB support
 Advanced shape rendering
 ```
+<h2>{{ site.data.list.docs_list_title }}</h2>
+<ul>
+   {% for item in site.data.list.docs %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+   {% endfor %}
+</ul>
