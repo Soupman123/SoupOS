@@ -24,10 +24,10 @@ PCI Devices
 To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development.
 
 ### Support
-fixmepls
+Currently you can support this project via staring this project on [github](https://github.com/Soupman123/SoupOS/), but more support options are coming soon.
 
 ### Legal
-“Soupman” License Condition v1.0, derived from the “Commons Clause” License Condition v1.0
+```“Soupman” License Condition v1.0, derived from the “Commons Clause” License Condition v1.0
 
 The Software is provided to you by the Licensor under the License, as defined below, subject to the following conditions.
 
@@ -37,4 +37,4 @@ For purposes of the foregoing, “Sell” means practicing any or all of the rig
 
 Software: SoupOS <br/>
 License: “Soupman” License Condition v1.0 <br/>
-Licensor: Soupman123 <br/>
+Licensor: Soupman123```
