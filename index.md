@@ -1,3 +1,10 @@
+<h2>{{ site.data.list.docs_list_title }}</h2>
+<ul>
+   {% for item in site.data.list.docs %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+   {% endfor %}
+</ul>
+
 ### SoupOS
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/).
 
@@ -25,9 +32,3 @@ Double buffering
 USB support
 Advanced shape rendering
 ```
-<h2>{{ site.data.list.docs_list_title }}</h2>
-<ul>
-   {% for item in site.data.list.docs %}
-      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-   {% endfor %}
-</ul>
