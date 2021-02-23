@@ -23,10 +23,10 @@ function copyToClipboard(text) {
 {% endfor %}
 </ul>
 
-### What is SoupOS? <a href="#" onclick="copyToClipboard('#cummy');return false;"><i>#</i></a>
+### What is SoupOS? <a href="#what-is-soupos" onclick="copyToClipboard('#what-is-soupos');return false;"><i>#</i></a>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
-### What can SoupOS do?
+### What can SoupOS do? <a href="#what-can-soupos-do" onclick="copyToClipboard('#what-can-soupos-do');return false;"><i>#</i></a>
 Some of the main features inlude but are not limmited to at this moment:
 ```
 PS/2 Mouse
