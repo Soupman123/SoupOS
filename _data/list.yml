@@ -18,9 +18,9 @@ toc:
         url: /piece3.html
   - title: Miscellaneous
     subfolderitems:
-      - page: Legal
-        url: /#legal
       - page: Support
         url: /#support
+      - page: Legal
+        url: /#legal
       - page: Widget 3
         url: /widget3.html
