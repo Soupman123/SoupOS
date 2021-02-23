@@ -20,9 +20,8 @@ Simple text rendering
 PCI Devices
 ```
 
-### Download
-You can download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img).<br/>
-You can also download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip).
+### How can I get involved / started?
+To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you wouldlike to learn more about operating system development.
 
 ### Credits
 Thanks to [Poncho](https://github.com/Absurdponcho/) for helping get me into OSdev and for providing great educational resources.
