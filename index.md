@@ -8,7 +8,7 @@
 {% endfor %}
 </ul>
 
-### What is SoupOS?
+### What is SoupOS? <button type='button' id='btn'>Copy</button>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
 ### What can SoupOS do?
