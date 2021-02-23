@@ -37,8 +37,10 @@ PCI Devices
 To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development. You can also support this project over in [support](#support)
 
 <h2>Group 2</h2>
+blah blah blah
 
 <h2>Miscellaneous</h2>
+eeeeeeeeee
 
 ### Credits <a href="#link-has-been-copied" onclick="copyToClipboard('#credits');"><i>#</i></a>
 Thanks to [@Absurdponcho](https://github.com/Absurdponcho) for helping me get started with operating system development & always providing great educational resources.
