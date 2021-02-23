@@ -1,9 +1,12 @@
 <h2>{{ site.data.list.docs_list_title }}</h2>
-<ul>
-   {% for item in site.data.list.docs %}
-      <li><a href="https://soupman123.github.io/SoupOS{{ item.url }}">{{ item.title }}</a></li>
-   {% endfor %}
-</ul>
+{% for item in site.data.list.docs %}
+    <h3>{{ item.title }}</h3>
+      <ul>
+        {% for entry in item.subfolderitems %}
+          <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>
+        {% endfor %}
+      </ul>
+  {% endfor %}
 
 ### SoupOS
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/).
