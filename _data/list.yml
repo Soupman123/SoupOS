@@ -3,11 +3,11 @@ toc:
   - title: Introduction
     subfolderitems:
       - page: What is SoupOS?
-        url: /#What+is+SoupOS%3F
-      - page: Thing 2
-        url: /thing2.html
-      - page: Thing 3
-        url: /thing3.html
+        url: /#what-is-soupos
+      - page: What can SoupOS do?
+        url: /#what-can-soupos-do
+      - page: How can I get involved?
+        url: /#how-can-i-get-involved
   - title: Group 2
     subfolderitems:
       - page: Piece 1
