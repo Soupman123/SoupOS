@@ -2,10 +2,10 @@ docs_list_title: SoupOS Documentation
 docs:
 
 - title: Introduction
-  url: /#introduction
+  url: SoupOS/#introduction
 
 - title: Installing
-  url: /#download
+  url: SoupOS/#download
 
 - title: Deployment
-  url: /#introduction
+  url: SoupOS/#introduction
