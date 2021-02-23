@@ -9,10 +9,10 @@
 </ul>
 
 ### What is SoupOS?
-[SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/).
+[SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
-### Specifications
-SoupOS is a operating system using a UEFI bootloader. Some of the main features inlude but are not limmited to:
+### What can SoupOS do?
+Some of the main features inlude but are not limmited to at this moment:
 ```
 PS/2 Mouse
 Basic Keyboard
