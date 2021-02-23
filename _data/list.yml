@@ -16,11 +16,11 @@ toc:
         url: /piece2.html
       - page: Piece 3
         url: /piece3.html
-  - title: Group 3
+  - title: Miscellaneous
     subfolderitems:
-      - page: Widget 1
-        url: /widget1.html
-      - page: Widget 2
-        url: /widget2.html
+      - page: Legal
+        url: /#legal
+      - page: Support
+        url: /#support
       - page: Widget 3
         url: /widget3.html
