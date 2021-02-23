@@ -18,7 +18,7 @@ function copyToClipboard(text) {
 {% for item in site.data.list.toc %}
    <h4>{{ item.title }}</h4>
    {% for entry in item.subfolderitems %}
-      <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>
+      <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a> <a href="{{ entry.url }}" onclick="copyToClipboard('{{ entry.url }}');return false;"><i>#</i></a></li>
    {% endfor %}
 {% endfor %}
 </ul>
