@@ -2,7 +2,7 @@
 function copyToClipboard(text) {
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    dummy.value = "https://soupman123.github.io/SoupOS/"+text;
+    dummy.value = "https://soupman123.github.io/SoupOS"+text;
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
