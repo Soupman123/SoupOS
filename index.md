@@ -1,5 +1,5 @@
 <h2>{{ site.data.list.docs_list_title }}</h2>
-{% for item in site.data.list.docs %}
+{% for item in site.data.samplelist.docs %}
     <h3>{{ item.title }}</h3>
       <ul>
         {% for entry in item.subfolderitems %}
