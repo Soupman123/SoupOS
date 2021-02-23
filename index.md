@@ -1,7 +1,7 @@
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
 {% for item in site.data.list.toc %}
-   <h3>{{ item.title }}</h3>
+   <h4>{{ item.title }}</h4>
    {% for entry in item.subfolderitems %}
       <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>
    {% endfor %}
