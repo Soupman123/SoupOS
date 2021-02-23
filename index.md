@@ -1,3 +1,18 @@
+<script>  
+function copyToClipboard(text) {
+    var dummy = document.createElement("textarea");
+    // to avoid breaking orgain page when copying more words
+    // cant copy when adding below this code
+    // dummy.style.display = 'none'
+    document.body.appendChild(dummy);
+    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+</script>
+
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
 {% for item in site.data.list.toc %}
@@ -8,7 +23,7 @@
 {% endfor %}
 </ul>
 
-### What is SoupOS? <button type='button' id='btn'>Copy</button>
+### What is SoupOS? <button type='button' onclick="copyToClipboard('https://soupman123.github.io/SoupOS/#cum');" id='btn'> # </button>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
 ### What can SoupOS do?
