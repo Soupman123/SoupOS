@@ -1,15 +1,9 @@
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
-   {% for item in site.data.list.docs %}
-      <li><a href="https://soupman123.github.io/SoupOS{{ item.url }}">{{ item.title }}</a></li>
-   {% endfor %}
-</ul>
-
-<ul>
 {% for item in site.data.list.toc %}
    <h3>{{ item.title }}</h3>
    {% for entry in item.subfolderitems %}
-      <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+      <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>
    {% endfor %}
 {% endfor %}
 </ul>
