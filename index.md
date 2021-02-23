@@ -18,15 +18,15 @@ function copyToClipboard(text) {
 {% for item in site.data.list.toc %}
    <h4>{{ item.title }}</h4>
    {% for entry in item.subfolderitems %}
-      <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a> <a href="https://soupman123.github.io/SoupOS{{ entry.url }}" onclick="copyToClipboard('{{ entry.url }}');return false;"><i>#</i></a></li>
+      <li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a> <a href="https://soupman123.github.io/SoupOS#link-has-been-copied" onclick="copyToClipboard('{{ entry.url }}');return false;"><i>#</i></a></li>
    {% endfor %}
 {% endfor %}
 </ul>
 
-### What is SoupOS? <a href="https://soupman123.github.io/SoupOS/#what-is-soupos" onclick="copyToClipboard('#what-is-soupos');return false;"><i>#</i></a>
+### What is SoupOS? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-is-soupos');return false;"><i>#</i></a>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
-### What can SoupOS do? <a href="https://soupman123.github.io/SoupOS/#what-can-soupos-do" onclick="copyToClipboard('#what-can-soupos-do');return false;"><i>#</i></a>
+### What can SoupOS do? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-can-soupos-do');return false;"><i>#</i></a>
 Some of the main features inlude but are not limmited to at this moment:
 ```
 PS/2 Mouse
