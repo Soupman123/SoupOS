@@ -19,7 +19,7 @@ function copyToClipboard(text) {
 {% endfor %}
 </ul>
 
-<h2>Introduction</h2>
+## Introduction
 
 ### What is SoupOS? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-is-soupos');"><i>#</i></a>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
@@ -36,10 +36,10 @@ PCI Devices
 ### How can I get involved / started? <a href="#link-has-been-copied" onclick="copyToClipboard('#how-can-i-get-involved--started');"><i>#</i></a>
 To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development. You can also support this project over in [support](#support)
 
-<h2>Group 2</h2>
+## Group 2
 blah blah blah
 
-<h2>Miscellaneous</h2>
+## Miscellaneous
 eeeeeeeeee
 
 ### Credits <a href="#link-has-been-copied" onclick="copyToClipboard('#credits');"><i>#</i></a>
