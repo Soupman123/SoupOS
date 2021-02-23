@@ -5,14 +5,14 @@
    {% endfor %}
 </ul>
 
+<ul>
 {% for item in site.data.list.toc %}
-    <h3>{{ item.title }}</h3>
-    <ul>
-      {% for entry in item.subfolderitems %}
-        <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
+   <h3>{{ item.title }}</h3>
+   {% for entry in item.subfolderitems %}
+      <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+   {% endfor %}
+{% endfor %}
+</ul>
 
 ### SoupOS
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/).
