@@ -50,5 +50,5 @@ Soupman License Condition notice.
 
 Software: SoupOS
 License: “Soupman” License Condition v1.0
-Licensor: Soupman123```
+Licensor: Soupman123
 ```
