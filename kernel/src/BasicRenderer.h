@@ -2,12 +2,14 @@
 #include "math.h"
 #include "Framebuffer.h"
 #include "simpleFonts.h" 
+#include "memory/memory.h"
 #include <stdint.h>
 
 class BasicRenderer{
     public:
-    BasicRenderer(Framebuffer* targetFramebuffer, PSF1_FONT* psf1_Font);
+    BasicRenderer(Framebuffer* ScreenMem, Framebuffer* targetFramebuffer, PSF1_FONT* psf1_Font);
     Point CursorPosition;
+    Framebuffer* screenMem;
     Framebuffer* TargetFramebuffer;
     PSF1_FONT* PSF1_Font;
     uint32_t MouseCursorBuffer[16*19];
@@ -20,6 +22,7 @@ class BasicRenderer{
     void ClearChar();
     void Clear();
     void Next();
+    void Update();
     void DrawOverlayMouseCursor(uint8_t* MousePointer, Point position, uint32_t color);
     void PutPix(uint32_t x, uint32_t y, uint32_t color);
     uint32_t GetPix(uint32_t x, uint32_t y);

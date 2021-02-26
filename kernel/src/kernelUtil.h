@@ -17,6 +17,7 @@
 #include "IO.h"
 #include "acpi.h"
 #include "pci/pci.h"
+#include "rtc/rtc.h"
 
 struct BootInfo {
 	Framebuffer* framebuffer;

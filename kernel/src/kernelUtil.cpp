@@ -63,17 +63,25 @@ void PrepareACPI(BootInfo* bootInfo){
     PCI::EnumeratePCI(mcfg);
 }
 
-BasicRenderer r = BasicRenderer(NULL, NULL);
+BasicRenderer f = BasicRenderer(NULL, NULL, NULL);
 KernelInfo InitializeKernel(BootInfo* bootInfo){
-    r = BasicRenderer(bootInfo->framebuffer, bootInfo->psf1_Font);
-    GlobalRenderer = &r;
-
     GDTDescriptor gdtDescriptor;
     gdtDescriptor.Size = sizeof(GDT) - 1;
     gdtDescriptor.Offset = (uint64_t)&DefaultGDT;
     LoadGDT(&gdtDescriptor);
 
     PrepareMemory(bootInfo);
+
+    Framebuffer* doubleBuffer;
+    doubleBuffer->BaseAddress = GlobalAllocator.RequestPages(bootInfo->framebuffer->BufferSize/4096);
+	doubleBuffer->BufferSize = bootInfo->framebuffer->BufferSize;
+	doubleBuffer->Height = bootInfo->framebuffer->Height;
+	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;
+	doubleBuffer->Width = bootInfo->framebuffer->Width;
+    GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
+    f = BasicRenderer(bootInfo->framebuffer, doubleBuffer, bootInfo->psf1_Font);
+    GlobalRenderer = &f;
+    GlobalRenderer->Clear();
 
     memset(bootInfo->framebuffer->BaseAddress, 0, bootInfo->framebuffer->BufferSize);
 

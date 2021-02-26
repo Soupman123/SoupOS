@@ -2,12 +2,17 @@
 
 BasicRenderer* GlobalRenderer;
 
-BasicRenderer::BasicRenderer(Framebuffer* targetFramebuffer, PSF1_FONT* psf1_Font)
+BasicRenderer::BasicRenderer(Framebuffer* ScreenMem, Framebuffer* targetFramebuffer, PSF1_FONT* psf1_Font)
 {
     TargetFramebuffer = targetFramebuffer;
+    screenMem = ScreenMem;
     PSF1_Font = psf1_Font;
     Color = 0xffffffff;
     CursorPosition = {0, 0};
+}
+
+void BasicRenderer::Update(){
+    memcpy(screenMem->BaseAddress,TargetFramebuffer->BaseAddress,TargetFramebuffer->BufferSize);
 }
 
 void BasicRenderer::PutPix(uint32_t x, uint32_t y, uint32_t color){
@@ -93,7 +98,7 @@ void BasicRenderer::ClearChar(){
     unsigned int* pixPtr = (unsigned int*)TargetFramebuffer->BaseAddress;
     for (unsigned long y = yOff; y < yOff + 16; y++){
         for (unsigned long x = xOff - 8; x < xOff; x++){
-                    *(unsigned int*)(pixPtr + x + (y * TargetFramebuffer->PixelsPerScanLine)) = ClearColor;
+            *(unsigned int*)(pixPtr + x + (y * TargetFramebuffer->PixelsPerScanLine)) = ClearColor;
         }
     }
 
