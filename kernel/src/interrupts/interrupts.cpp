@@ -1,17 +1,20 @@
 #include "interrupts.h"
+#include "../panic.h"
+#include "../IO.h"
+#include "../userinput/keyboard.h"
 
 __attribute__((interrupt)) void PageFault_Handler(interrupt_frame* frame){
-    Panic("Page_Fault_Detected");
+    Panic("Page Fault Detected");
     while(true);
 }
 
 __attribute__((interrupt)) void DoubleFault_Handler(interrupt_frame* frame){
-    Panic("Double_Fault_Detected");
+    Panic("Double Fault Detected");
     while(true);
 }
 
 __attribute__((interrupt)) void GPFault_Handler(interrupt_frame* frame){
-    Panic("General_Protection_Fault_Detected");
+    Panic("General Protection Fault Detected");
     while(true);
 }
 

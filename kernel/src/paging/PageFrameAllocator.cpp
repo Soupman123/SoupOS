@@ -34,12 +34,12 @@ void PageFrameAllocator::ReadEFIMemoryMap(EFI_MEMORY_DESCRIPTOR* mMap, size_t mM
     InitBitmap(bitmapSize, largestFreeMemSeg);
 
     LockPages(PageBitmap.Buffer, PageBitmap.Size / 4096 + 1);
+
     for (int i = 0; i < mMapEntries; i++){
         EFI_MEMORY_DESCRIPTOR* desc = (EFI_MEMORY_DESCRIPTOR*)((uint64_t)mMap + (i * mMapDescSize));
-        if (desc->type != 7){ // type != EfiConventionalMemory
+        if (desc->type != 7){ // not efiConventionalMemory
             ReservePages(desc->physAddr, desc->numPages);
         }
-    
     }
 }
 
@@ -50,30 +50,15 @@ void PageFrameAllocator::InitBitmap(size_t bitmapSize, void* bufferAddress){
         *(uint8_t*)(PageBitmap.Buffer + i) = 0;
     }
 }
-
 uint64_t pageBitmapIndex = 0;
 void* PageFrameAllocator::RequestPage(){
-    for (; pageBitmapIndex < PageBitmap.Size * 8; pageBitmapIndex++)
-    {
+    for (; pageBitmapIndex < PageBitmap.Size * 8; pageBitmapIndex++){
         if (PageBitmap[pageBitmapIndex] == true) continue;
         LockPage((void*)(pageBitmapIndex * 4096));
         return (void*)(pageBitmapIndex * 4096);
     }
-    
-    return NULL; // do pageswap to file
-}
 
-void* PageFrameAllocator::RequestPages(uint64_t pageCount){
-    uint64_t i = 0;
-    for (uint64_t pageBitmapIndex = 0; pageBitmapIndex < PageBitmap.Size * 8; pageBitmapIndex++){
-        if(PageBitmap[pageBitmapIndex] == false){i++;}
-        else{i = 0;}
-        if(i==pageCount){
-            LockPages((void*)((pageBitmapIndex-i+1) * 4096), pageCount);
-            return (void*)((pageBitmapIndex-i) * 4096);
-        }
-    }
-    return NULL;
+    return NULL; // Page Frame Swap to file
 }
 
 void PageFrameAllocator::FreePage(void* address){
@@ -141,11 +126,9 @@ void PageFrameAllocator::ReservePages(void* address, uint64_t pageCount){
 uint64_t PageFrameAllocator::GetFreeRAM(){
     return freeMemory;
 }
-
 uint64_t PageFrameAllocator::GetUsedRAM(){
     return usedMemory;
 }
-
 uint64_t PageFrameAllocator::GetReservedRAM(){
     return reservedMemory;
 }

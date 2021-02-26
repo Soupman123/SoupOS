@@ -13,19 +13,18 @@ struct GDTEntry {
     uint8_t AccessByte;
     uint8_t Limit1_Flags;
     uint8_t Base2;
+}__attribute__((packed));
 
-} __attribute__((packed));
-
-struct GDT
-{
-    GDTEntry Null; // 0x00
-    GDTEntry KernelCode; // 0x08
-    GDTEntry KernelData; // 0x10
+struct GDT {
+    GDTEntry Null; //0x00
+    GDTEntry KernelCode; //0x08
+    GDTEntry KernelData; //0x10
     GDTEntry UserNull;
     GDTEntry UserCode;
     GDTEntry UserData;
 } __attribute__((packed)) 
-__attribute__((aligned(0x1000)));
+__attribute((aligned(0x1000)));
 
 extern GDT DefaultGDT;
+
 extern "C" void LoadGDT(GDTDescriptor* gdtDescriptor);

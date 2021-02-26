@@ -1,10 +1,6 @@
-  #pragma once
-#include "../drivers/display/Rendering.h"
-#include "../panic.h"
-#include "../io/IO.h"
-#include "../drivers/keyboard/keyboard.h"
-#include "../drivers/mouse/mouse.h"
-
+#pragma once
+#include "../BasicRenderer.h"
+#include "../userinput/mouse.h"
 
 #define PIC1_COMMAND 0x20
 #define PIC1_DATA 0x21

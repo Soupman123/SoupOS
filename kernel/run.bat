@@ -15,5 +15,5 @@ echo Replacing Old Files...
 wsl cd SoupOSUEFI/OVMFbinSrc ; cp -f OVMF_CODE-pure-efi.fd ../OVMFbin/OVMF_CODE-pure-efi.fd ; cp -f OVMF_VARS-pure-efi.fd ../OVMFbin/OVMF_VARS-pure-efi.fd
 echo Starting QEMU....
 @set path=C:\Program Files\qemu
-qemu-system-x86_64 -drive format=raw,file=Z:\home\soupman\SoupOSUEFI\kernel\bin\SoupOS.img -m 256M -cpu qemu64 -drive if=pflash,format=raw,unit=0,file=..\OVMFbin\OVMF_CODE-pure-efi.fd,readonly=on -drive if=pflash,format=raw,unit=1,file=..\OVMFbin\OVMF_VARS-pure-efi.fd -net none
+qemu-system-x86_64 -netdev user,id=mynet0 -device pcnet,netdev=mynet0 -machine q35 -drive format=raw,file=Z:\home\soupman\SoupOSUEFI\kernel\bin\SoupOS.img -m 256M -cpu qemu64 -drive if=pflash,format=raw,unit=0,file=..\OVMFbin\OVMF_CODE-pure-efi.fd,readonly=on -drive if=pflash,format=raw,unit=1,file=..\OVMFbin\OVMF_VARS-pure-efi.fd -net none
 @popd

@@ -1,9 +1,8 @@
 #pragma once
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
-class Bitmap
-{
+class Bitmap{
     public:
     size_t Size;
     uint8_t* Buffer;

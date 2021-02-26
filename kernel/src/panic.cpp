@@ -1,11 +1,18 @@
 #include "panic.h"
-#include "drivers/display/Rendering.h"
+#include "BasicRenderer.h"
 
 void Panic(const char* panicMessage){
-    renderer->clear(0x1a2040);
+    GlobalRenderer->ClearColor = 0x00ff0000;
+    GlobalRenderer->Clear();
 
-    renderer->textCursorPosition = {0, 0};
+    GlobalRenderer->CursorPosition = {0, 0};
 
-    renderer->Print("SoupOS has encountered an issue, please restart your machine. :( ERR_CODE: ");
-    renderer->Print(panicMessage);
-} 
+    GlobalRenderer->Color = 0;
+
+    GlobalRenderer->Print("Kernel Panic");
+
+    GlobalRenderer->Next();
+    GlobalRenderer->Next();
+
+    GlobalRenderer->Print(panicMessage);
+}
