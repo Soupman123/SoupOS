@@ -18,6 +18,13 @@ extern "C" void _start(BootInfo* bootInfo){
         GlobalRenderer->Print(to_string((uint64_t)rtc.readMinutes()));
         GlobalRenderer->Print(":");
         GlobalRenderer->Print(to_string((uint64_t)rtc.readSeconds()));
+        
+        GlobalRenderer->Print("{");
+        GlobalRenderer->Print(to_string((uint64_t)MousePosition.X));
+        GlobalRenderer->Print(", ");
+        GlobalRenderer->Print(to_string((uint64_t)MousePosition.Y));
+        GlobalRenderer->Print("}");
+
         GlobalRenderer->Update();
         GlobalRenderer->Clear();
     }
