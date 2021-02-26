@@ -12,7 +12,7 @@ BasicRenderer::BasicRenderer(Framebuffer* ScreenMem, Framebuffer* targetFramebuf
 }
 
 void BasicRenderer::Update(){
-    memcpy(screenMem->BaseAddress,TargetFramebuffer->BaseAddress,TargetFramebuffer->BufferSize);
+    memcpy((void *__restrict)screenMem->BaseAddress,(void *__restrict)TargetFramebuffer->BaseAddress,TargetFramebuffer->BufferSize);
 }
 
 void BasicRenderer::PutPix(uint32_t x, uint32_t y, uint32_t color){

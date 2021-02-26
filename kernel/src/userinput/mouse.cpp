@@ -137,7 +137,6 @@ void ProcessMousePacket(){
         if (MousePosition.Y > GlobalRenderer->TargetFramebuffer->Height-1) MousePosition.Y = GlobalRenderer->TargetFramebuffer->Height-1;
         
         GlobalRenderer->ClearMouseCursor(MousePointer, MousePositionOld);
-        GlobalRenderer->DrawOverlayMouseCursor(MousePointer, MousePosition, 0xffffffff);
 
         uint32_t color = GlobalRenderer->Color;
         if (MousePacket[0] & PS2Leftbutton){
