@@ -26,7 +26,6 @@ class BasicRenderer{
     void DrawOverlayMouseCursor(uint8_t* MousePointer, Point position, uint32_t color);
     void PutPix(uint32_t x, uint32_t y, uint32_t color);
     uint32_t GetPix(uint32_t x, uint32_t y);
-    void ClearMouseCursor(uint8_t* MousePointer, Point position);
     bool MouseDrawn;
 };
 

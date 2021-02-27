@@ -80,6 +80,7 @@ KernelInfo InitializeKernel(BootInfo* bootInfo){
 	doubleBuffer->Width = bootInfo->framebuffer->Width;
     GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
     f = BasicRenderer(bootInfo->framebuffer, doubleBuffer, bootInfo->psf1_Font);
+
     GlobalRenderer = &f;
     GlobalRenderer->Clear();
 

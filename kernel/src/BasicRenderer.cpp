@@ -23,30 +23,6 @@ uint32_t BasicRenderer::GetPix(uint32_t x, uint32_t y){
     return *(uint32_t*)((uint64_t)TargetFramebuffer->BaseAddress+(x*4)+(y*TargetFramebuffer->PixelsPerScanLine*4));
 }
 
-void BasicRenderer::ClearMouseCursor(uint8_t* MousePointer, Point position){
-    if(!MouseDrawn) return;
-
-    int xMax = 16;
-    int yMax = 19;
-    int differenceX = TargetFramebuffer->Width - position.X;
-    int differenceY = TargetFramebuffer->Height - position.Y;
-
-    if (differenceX < 16) xMax = differenceX;
-    if (differenceY < 19) yMax = differenceY;
-
-    for (int y = 0; y < yMax; y++) {
-        for (int x = 0; x < xMax; x++) {
-            int bit = y*16+x;
-            int byte = bit/8;
-            if ((MousePointer[byte]&(0b10000000 >> (x%8)))){
-                if(GetPix(position.X + x, position.Y + y) == MouseCursorBufferAfter[x+y*16]){
-                    PutPix(position.X + x, position.Y + y, MouseCursorBuffer[x+y*16]);
-                }   
-            }
-        }
-    }
-}
-
 void BasicRenderer::DrawOverlayMouseCursor(uint8_t* MousePointer, Point position, uint32_t color){
     int xMax = 16;
     int yMax = 19;

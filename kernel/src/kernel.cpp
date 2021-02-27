@@ -42,8 +42,6 @@ extern "C" void _start(BootInfo* bootInfo){
             fps = 0;
         }
 
-        for(int i = 0;i<cpu.cpuFeatures;i++) GlobalRenderer->Print(CPUFeatures[i]);
-
         GlobalRenderer->Update();
         GlobalRenderer->Clear();
     }

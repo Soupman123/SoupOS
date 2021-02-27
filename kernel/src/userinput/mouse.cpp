@@ -1,27 +1,5 @@
 #include "mouse.h"
 
-uint8_t MousePointer[] = {
-    0b10000000, 0b00000000,
-    0b11000000, 0b00000000,
-    0b10100000, 0b00000000,
-    0b10010000, 0b00000000,
-    0b10001000, 0b00000000,
-    0b10000100, 0b00000000,
-    0b10000010, 0b00000000,
-    0b10000001, 0b00000000,
-    0b10000000, 0b10000000,
-    0b10000000, 0b01000000,
-    0b10000000, 0b00100000,
-    0b10000000, 0b00010000,
-    0b10000001, 0b11110000,
-    0b10001001, 0b00000000,
-    0b10010100, 0b10000000,
-    0b10100100, 0b10000000,
-    0b11000010, 0b01000000,
-    0b00000010, 0b01000000,
-    0b00000001, 0b10000000,
-};
-
 void MouseWait(){
     uint64_t timeout = 100000;
     while (timeout--){
@@ -135,8 +113,8 @@ void ProcessMousePacket(){
         
         if (MousePosition.Y < 0) MousePosition.Y = 0;
         if (MousePosition.Y > GlobalRenderer->TargetFramebuffer->Height-1) MousePosition.Y = GlobalRenderer->TargetFramebuffer->Height-1;
-        
-        GlobalRenderer->ClearMouseCursor(MousePointer, MousePositionOld);
+
+        MouseEventHandler->HandleMouseMove(MousePosition);
 
         uint32_t color = GlobalRenderer->Color;
         if (MousePacket[0] & PS2Leftbutton){
