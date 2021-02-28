@@ -31,6 +31,7 @@ PS/2 Mouse
 Basic Keyboard
 Simple text rendering
 PCI Devices
+Temporary Double Buffering System (subject to major performance improvement in near future!)
 ```
 
 ### How can I get involved / started? <a href="#link-has-been-copied" onclick="copyToClipboard('#how-can-i-get-involved--started');"><i>#</i></a>
