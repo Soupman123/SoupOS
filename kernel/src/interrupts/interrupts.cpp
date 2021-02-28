@@ -1,7 +1,7 @@
 #include "interrupts.h"
 #include "../panic.h"
 #include "../IO.h"
-#include "../userinput/keyboard.h"
+#include "../userinput/Keyboard/keyboard.h"
 
 __attribute__((interrupt)) void PageFault_Handler(interrupt_frame* frame){
     Panic("Page Fault Detected");

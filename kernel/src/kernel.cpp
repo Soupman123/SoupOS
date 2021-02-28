@@ -4,8 +4,8 @@ extern "C" void _start(BootInfo* bootInfo){
 
     KernelInfo kernelInfo = InitializeKernel(bootInfo);
     PageTableManager* pageTableManager = kernelInfo.pageTableManager;
-
     RealTimeClock rtc;
+
 
     GlobalRenderer->Print("Kernel Initialized Successfully");
 
@@ -14,7 +14,6 @@ extern "C" void _start(BootInfo* bootInfo){
     uint64_t Rfps = 0;
 
     while(true){
-        ProcessMousePacket();
         GlobalRenderer->CursorPosition = {0, 0};
         GlobalRenderer->Print("Time: ");
         GlobalRenderer->Print(to_string((uint64_t)rtc.readHours()));
@@ -24,7 +23,6 @@ extern "C" void _start(BootInfo* bootInfo){
         GlobalRenderer->Print(to_string((uint64_t)rtc.readSeconds()));
         
         GlobalRenderer->Next();
-        GlobalRenderer->DrawOverlayMouseCursor(MousePointer, MousePosition, 0xffffffff);
         GlobalRenderer->Print("{");
         GlobalRenderer->Print(to_string((uint64_t)MousePosition.X));
         GlobalRenderer->Print(", ");
@@ -42,7 +40,7 @@ extern "C" void _start(BootInfo* bootInfo){
             fps = 0;
         }
 
-        GlobalRenderer->Update();
+        // GlobalRenderer->Update();
         GlobalRenderer->Clear();
     }
 

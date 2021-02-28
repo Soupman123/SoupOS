@@ -79,7 +79,10 @@ KernelInfo InitializeKernel(BootInfo* bootInfo){
 	doubleBuffer->PixelsPerScanLine = bootInfo->framebuffer->PixelsPerScanLine;
 	doubleBuffer->Width = bootInfo->framebuffer->Width;
     GlobalAllocator.LockPages(doubleBuffer->BaseAddress, ((uint64_t)doubleBuffer->BufferSize / 4096) + 1);
-    f = BasicRenderer(bootInfo->framebuffer, doubleBuffer, bootInfo->psf1_Font);
+    // Double Buffer
+    // f = BasicRenderer(bootInfo->framebuffer, doubleBuffer, bootInfo->psf1_Font);
+    // Single Buffer
+    f = BasicRenderer(bootInfo->framebuffer, bootInfo->framebuffer, bootInfo->psf1_Font);
 
     GlobalRenderer = &f;
     GlobalRenderer->Clear();
@@ -88,6 +91,7 @@ KernelInfo InitializeKernel(BootInfo* bootInfo){
 
     PrepareInterrupts();
 
+    //Set Up Events
     InitPS2Mouse();
 
     PrepareACPI(bootInfo);
