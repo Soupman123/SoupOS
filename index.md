@@ -45,7 +45,6 @@ Primary Framebuffer information and location
 RSDP
 Memory Map
 ```
-### Kernel startup tasks.
 The kernel has many tasks it has to complete on startup in order to run. These tasks are important such as defining a global memory table, and paging.
 
 ### GDT
@@ -94,3 +93,18 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
+<script>
+    mybutton = document.getElementById("btt");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+</script>
+<a href="#top" id="btt"><i>Go back to top.</i></a>
