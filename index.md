@@ -93,7 +93,7 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
-<div id="btt" style="display: none; position: fixed; bottom: 0; right: 0; background-color: #4287f5; border-radius: 15%; padding: 15px">
+<div id="btt" style="display: none; position: fixed; bottom: 0; right: 0; background-color: #f54b42; border-radius: 50%; padding: 15px">
 <a href="#top">Go back to top.</a>
 </div>
 <script>
