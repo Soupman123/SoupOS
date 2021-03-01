@@ -45,8 +45,8 @@ After we have completed some basics, we can add extras, such as the ability to w
 ### Interrupts
 Next the kernel initializes i/o. Interrupts are the first to be initalized, this allows the PS/2 keyboard & mouse to work and be handled.
 
-### ACPI
-Now we can finally interact with items such as pci, which can support things like graphics cards or usb controllers.
+### PCI
+Now we can initialize ACPI to finally interact with pci, which can support things like graphics cards or usb controllers.
 
 ### RTC
 After all this the kernel sets up a RTC (real time clock) to have a system clock and other time functions.
@@ -87,4 +87,4 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
-<a href="#top">Go back to top.</a>
+<a href="#top">Back to top.</a>
