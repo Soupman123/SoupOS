@@ -107,4 +107,4 @@ function scrollFunction() {
   }
 }
 </script>
-<a href="#top" id="btt"><i>Go back to top.</i></a>
+<a href="#top" id="btt" style="position: fixed; bottom: 0; right: 0;"><i>Go back to top.</i></a>
