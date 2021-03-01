@@ -10,12 +10,18 @@ toc:
         url: /#how-can-i-get-involved--started
   - title: Internals
     subfolderitems:
+      - page: GDT
+        url:  /#gdt
+      - page: Preparing the memory
+        url: /#preparing-the-memory
       - page: Graphics
-        url:  /#graphics
-      - page: PCI
-        url: /#pci
+        url: /#graphics
       - page: Interrupts
         url: /#interrupts
+      - page: PCI
+        url: /#pci
+      - page: RTC
+        url: /#rtc
   - title: Miscellaneous
     subfolderitems:
       - page: Credits
