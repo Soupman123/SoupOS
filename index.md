@@ -42,6 +42,14 @@ The next task the kernel completes is the memory preparation. To prepare the mem
 ### Rendering
 After we have completed some basics, we can add extras, such as the ability to write to the screen. The kernel now will give the framebuffer sent by the bootloader to the rendering handler. There are many algorithms the renderer has to write shapes and other graphics, so I will not describe them here. The render also has one other mode called "double buffering". Double buffering is where the renderer will write to an auxilary section in memory first, then the rendering loop will copy the buffer to the screen memory. This will prevent artifacting, and enable screen clearing. The issue with double buffering is it is very slow to copy the memory, which is the cause that it comes disabled by default. The buffering will be modified once a new graphics output protocol is written for SoupOS that will allow where the screen memory is read from. If we could move the screen memory, we could switch between the 2 buffers instead of moving the actual bytes. This feature is sadly still in development though. 
 
+### Interrupts
+Next the kernel initializes i/o. Interrupts are the first to be initalized, this allows the PS/2 keyboard & mouse to work and be handled.
+
+### ACPI
+Now we can finally interact with items such as pci, which can support things like graphics cards or usb controllers.
+
+### RTC
+After all this the kernel sets up a RTC (real time clock) to have a system clock and other time functions.
 
 ## Miscellaneous
 
