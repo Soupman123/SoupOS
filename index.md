@@ -93,9 +93,9 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
-
-<a href="#top" id="btt" style="display: none; position: fixed; bottom: 0; right: 0;">Go back to top.</a>
-
+<div id="btt" style="display: none; position: fixed; bottom: 0; right: 0; background-color: #bbb;">
+<a href="#top">Go back to top.</a>
+</div>
 <script>
     mybutton = document.getElementById("btt");
     window.onscroll = function() {scrollFunction()};
