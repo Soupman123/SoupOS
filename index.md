@@ -1,5 +1,5 @@
 <script>
-document.body.innerHTML += '<div id="menu" style="position: fixed; right: 0; top: 0;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div>';
+document.body.innerHTML += '<div id="menu" style="left: 30;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div>';
 </script>
 
 ## Introduction
