@@ -93,6 +93,8 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
+
+<a href="#top" id="btt" style="display: none; position: fixed; bottom: 0; right: 0;"><i>Go back to top.</i></a>
 <script>
     mybutton = document.getElementById("btt");
 
@@ -107,4 +109,3 @@ function scrollFunction() {
   }
 }
 </script>
-<a href="#top" id="btt" style="position: fixed; bottom: 0; right: 0;"><i>Go back to top.</i></a>
