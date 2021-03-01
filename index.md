@@ -21,10 +21,10 @@ function copyToClipboard(text) {
 
 # Introduction
 
-## What is SoupOS? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-is-soupos');"><i>#</i></a>
+## What is SoupOS?
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
 
-## What can SoupOS do? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-can-soupos-do');"><i>#</i></a>
+## What can SoupOS do?
 Some of the main features inlude but are not limmited to at this moment:
 ```
 PS/2 Mouse
@@ -35,10 +35,10 @@ PCI Devices
 (subject to major performance improvement in near future!)
 ```
 
-## How can I get involved / started? <a href="#link-has-been-copied" onclick="copyToClipboard('#how-can-i-get-involved--started');"><i>#</i></a>
+## How can I get involved / started?
 To get involved you can download the source code [here](https://github.com/Soupman123/SoupOS/archive/master.zip), or download the compiled operating system image [here](https://github.com/Soupman123/SoupOS/raw/master/kernel/bin/SoupOS.img). There are also some great resources over at [@Absurdponcho](https://github.com/Absurdponcho)['s operating system](https://github.com/Absurdponcho/PonchoOS) if you would like to learn more about operating system development. You can also support this project over in [support](#support).
 
-# Internals  <a href="#link-has-been-copied" onclick="copyToClipboard('#internals');"><i>#</i></a>
+# Internals
 The bootloader is an efi application and can be found [here](https://github.com/Soupman123/SoupOS/blob/master/gnu-efi/bootloader/main.c). It passes all the nessasary values to the [kernel](https://github.com/Soupman123/SoupOS/blob/master/kernel/src/kernel.cpp). These valuse include (but not limited to):
 ```
 Primary Framebuffer information and location
@@ -60,15 +60,15 @@ After we have completed some basics, we can add extras, such as the ability to w
 
 # Miscellaneous
 
-## Credits <a href="#link-has-been-copied" onclick="copyToClipboard('#credits');"><i>#</i></a>
+## Credits 
 Thanks to [@Absurdponcho](https://github.com/Absurdponcho) for helping me get started with operating system development & always providing great educational resources.
 [Soup#9370](https://discord.com/users/698622052059316285/).
 
-## Support <a href="#link-has-been-copied" onclick="copyToClipboard('#support');"><i>#</i></a>
+## Support
 Currently you can support this project via staring this project on [github](https://github.com/Soupman123/SoupOS/), but more support options are coming soon.
 You can support [@Absurdponcho](https://github.com/Absurdponcho) via his [patreon](https://www.patreon.com/PonchoYT).
 
-## Legal <a href="#link-has-been-copied" onclick="copyToClipboard('#legal');"><i>#</i></a>
+## Legal
 ```
 “Soupman” License Condition v1.0, derived from the “Commons Clause” 
 License Condition v1.0
