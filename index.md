@@ -1,4 +1,4 @@
-<div style="position: fixed; right: -100%;">
+<div style="position: fixed; right: 0;">
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
 {% for item in site.data.list.toc %}
