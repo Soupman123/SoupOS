@@ -1,6 +1,9 @@
 <div id="menu" style="position: fixed; right: 0; top: 0;">
 <script>
-window.onscroll = function() {document.getElementById("menu").style.top = document.body.scrollTop;};
+var myDiv = document.createElement("div");
+myDiv.id = 'menu';
+myDiv.innerHTML = "<h1>Hello World!</h1>";
+document.body.appendChild(myDiv);
 </script>
    
 <h2>{{ site.data.list.docs_list_title }}</h2>
