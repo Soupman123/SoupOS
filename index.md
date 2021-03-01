@@ -19,7 +19,7 @@ function copyToClipboard(text) {
 {% endfor %}
 </ul>
 
-## Tntroduction
+## Introduction
 
 ### What is SoupOS? <a href="#link-has-been-copied" onclick="copyToClipboard('#what-is-soupos');"><i>#</i></a>
 [SoupOS](http://github.com) is a computer operating system currently maintained & written by [Soupman123](https://github.com/Soupman123/). SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.
