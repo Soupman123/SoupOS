@@ -5,6 +5,8 @@ myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-lef
 document.body.appendChild(myDiv);
 </script>
 
+<a class="zip_download_link" href="https://github.com/pages-themes/slate/zipball/master">Download this project as a .zip file</a>
+
 ## Introduction
 
 ### What is SoupOS?
