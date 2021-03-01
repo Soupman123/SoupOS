@@ -1,11 +1,11 @@
+<a class="zip_download_link" style="position: absolute; top: 285px;" href="https://github.com/pages-themes/slate/zipball/master">Download this project as a .zip file</a>
+
 <script>
 var myDiv = document.createElement("div");
 myDiv.id = 'menu';
 myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 285px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div>';
 document.body.appendChild(myDiv);
 </script>
-
-<a class="zip_download_link" href="https://github.com/pages-themes/slate/zipball/master">Download this project as a .zip file</a>
 
 ## Introduction
 
