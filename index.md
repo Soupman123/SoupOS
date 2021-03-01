@@ -1,14 +1,4 @@
-<script>  
-function copyToClipboard(text) {
-    var dummy = document.createElement("textarea");
-    document.body.appendChild(dummy);
-    dummy.value = "https://soupman123.github.io/SoupOS"+text;
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
-}
-</script>
-
+<div style="position: fixed; bottom: 0; right: 0;">
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
 {% for item in site.data.list.toc %}
@@ -18,6 +8,7 @@ function copyToClipboard(text) {
    {% endfor %}
 {% endfor %}
 </ul>
+</div>
 
 ## Introduction
 
