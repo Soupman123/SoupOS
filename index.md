@@ -94,18 +94,16 @@ License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
 
-<a href="#top" id="btt" style="display: none; position: fixed; bottom: 0; right: 0;"><i>Go back to top.</i></a>
+<a href="#top" id="btt" style="display: none; position: fixed; bottom: 0; right: 0;">Go back to top.</a>
+
 <script>
     mybutton = document.getElementById("btt");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
 </script>
