@@ -1,4 +1,8 @@
-<div style="position: fixed; right: 0;">
+<div id="menu" style="position: fixed; right: 0; top: 0;">
+<script>
+window.onscroll = function() {document.getElementById("menu").style.top = document.body.scrollTop;};
+</script>
+   
 <h2>{{ site.data.list.docs_list_title }}</h2>
 <ul>
 {% for item in site.data.list.toc %}
