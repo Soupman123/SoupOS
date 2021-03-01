@@ -31,7 +31,7 @@ PS/2 Mouse
 Basic Keyboard
 Simple text rendering
 PCI Devices
-Temporary Double Buffering System 
+*Temporary Double Buffering System
 (subject to major performance improvement in near future!)
 ```
 
@@ -49,6 +49,7 @@ Thanks to [@Absurdponcho](https://github.com/Absurdponcho) for helping me get st
 
 ### Support <a href="#link-has-been-copied" onclick="copyToClipboard('#support');"><i>#</i></a>
 Currently you can support this project via staring this project on [github](https://github.com/Soupman123/SoupOS/), but more support options are coming soon.
+You can support [@Absurdponcho](https://github.com/Absurdponcho) via his [patreon](https://www.patreon.com/PonchoYT).
 
 ### Legal <a href="#link-has-been-copied" onclick="copyToClipboard('#legal');"><i>#</i></a>
 ```
