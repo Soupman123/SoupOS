@@ -1,8 +1,19 @@
 <script>
 var myDiv = document.createElement("div");
 myDiv.id = 'menu';
-myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 260px" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>';
+myDiv.innerHTML = '
+	<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;">
+		<h2>{{ site.data.list.docs_list_title }}</h2>
+		<ul>{% for item in site.data.list.toc %}
+			<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}
+			<li>
+				<a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a>
+			</li>{% endfor %}{% endfor %}
+		</ul>
+	</div>
+	<a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 260px" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>';
 document.body.appendChild(myDiv);
+
 </script>
 
 ## Introduction
@@ -87,6 +98,7 @@ Software: SoupOS
 License: “Soupman” License Condition v1.0
 Licensor: Soupman123
 ```
+
 <a href="#top">Back to top.</a>
 <script>
 window.onload=function removeGHPages({document.evaluate('/html/body/div[4]/footer/p[2]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue.remove();}
