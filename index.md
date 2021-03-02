@@ -55,8 +55,7 @@ After all this the kernel sets up a RTC (real time clock) to have a system clock
 ## Miscellaneous
 
 ### Credits 
-Thanks to [@Absurdponcho](https://github.com/Absurdponcho) for helping me get started with operating system development & always providing great educational resources.
-[Soup#9370](https://discord.com/users/698622052059316285/).
+Thanks to [@Absurdponcho](https://github.com/Absurdponcho) for helping me get started with operating system development & always providing great educational resources and [Soup#9370](https://discord.com/users/698622052059316285/).
 
 ### Support
 Currently you can support this project via staring this project on [github](https://github.com/Soupman123/SoupOS/), but more support options are coming soon.
