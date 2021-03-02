@@ -1,8 +1,12 @@
 <script>
 var myDiv = document.createElement("div");
 myDiv.id = 'menu';
-myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 260px" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a><img src="SoupOSLogoBlue.png" alt="logo" style="position: absolute; top: 10px left: 10px; width: 210px; height: 210px; border-style: none;"/>';
+myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 260px" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a><img src="SoupOSLogoBlue.png" alt="logo" style="position: absolute; top: 210px left: 0; margin-left: 10; margin-top: 10px; width: 210px; height: 210px; border-style: none;"/>';
 document.body.appendChild(myDiv);
+
+var link = document.createElement("link");
+link.innerHTML = '<link rel="shortcut icon" type="image/png" href="favicon.ico">';
+document.head.appendChild(link);
 </script>
 
 ## Introduction
