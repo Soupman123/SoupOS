@@ -1,7 +1,7 @@
 <script>
 var myDiv = document.createElement("div");
 myDiv.id = 'menu';
-myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 19%" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>';
+myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 30px; top: 286px;"><h2>{{ site.data.list.docs_list_title }}</h2><ul>{% for item in site.data.list.toc %}<h4>{{ item.title }}</h4>{% for entry in item.subfolderitems %}<li><a href="https://soupman123.github.io/SoupOS{{ entry.url }}">{{ entry.page }}</a></li>{% endfor %}{% endfor %}</ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 19%" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a><img src="SoupOSLogoBlue.png"/>';
 document.body.appendChild(myDiv);
 </script>
 
