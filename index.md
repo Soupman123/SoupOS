@@ -1,6 +1,3 @@
-<head>
-<link rel="shortcut icon" type="image/x-icon" href="SoupOSLogoBlue.png">
-</head>
 <script>
 var myDiv = document.createElement("div");
 myDiv.id = 'menu';
