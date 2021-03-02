@@ -89,5 +89,5 @@ Licensor: Soupman123
 ```
 <a href="#top">Back to top.</a>
 <script>
-document.evaluate('/html/body/div[4]/footer/p[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.remove();
+window.onload=document.evaluate('/html/body/div[4]/footer/p[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.remove();
 </script>
