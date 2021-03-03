@@ -33,18 +33,32 @@
             <a id="forkme_banner" href="https://github.com/Soupman123/SoupOS">View on GitHub</a>
             <h1 id="project_title">SoupOS</h1>
             <h2 id="project_tagline">An operating system currently under development, written and maintained by Soupman123. </h2>
+            <a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 19%" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>
+            <div id="menu" style="position: absolute; left: 0; margin-left: 2.2%; top: 286px;">
+               <h2>Documentation</h2>
+               <ul>
+                  <h4>Introduction</h4>
+                  <li><a href="https://soupman123.github.io/SoupOS/#what-is-soupos">What is SoupOS?</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#what-can-soupos-do">What can SoupOS do?</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#how-can-i-get-involved--started">How can I get involved / started?</a></li>
+                  <h4>Internals</h4>
+                  <li><a href="https://soupman123.github.io/SoupOS/#gdt">GDT</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#preparing-the-memory">Preparing the memory</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#graphics">Graphics</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#interrupts">Interrupts</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#pci">PCI</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#rtc">RTC</a></li>
+                  <h4>Miscellaneous</h4>
+                  <li><a href="https://soupman123.github.io/SoupOS/#credits">Credits</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#support">Support</a></li>
+                  <li><a href="https://soupman123.github.io/SoupOS/#legal">Legal</a></li>
+               </ul>
+            </div>
          </header>
       </div>
       <!-- MAIN CONTENT -->
       <div id="main_content_wrap" class="outer">
          <section id="main_content" class="inner">
-            <script>
-               var myDiv = document.createElement("div");
-               myDiv.id = 'menu';
-               myDiv.innerHTML = '<div id="menu" style="position: absolute; left: 0; margin-left: 2.2%; top: 286px;"><h2>Documentation</h2><ul><h4>Introduction</h4><li><a href="https://soupman123.github.io/SoupOS/#what-is-soupos">What is SoupOS?</a></li><li><a href="https://soupman123.github.io/SoupOS/#what-can-soupos-do">What can SoupOS do?</a></li><li><a href="https://soupman123.github.io/SoupOS/#how-can-i-get-involved--started">How can I get involved / started?</a></li><h4>Internals</h4><li><a href="https://soupman123.github.io/SoupOS/#gdt">GDT</a></li><li><a href="https://soupman123.github.io/SoupOS/#preparing-the-memory">Preparing the memory</a></li><li><a href="https://soupman123.github.io/SoupOS/#graphics">Graphics</a></li><li><a href="https://soupman123.github.io/SoupOS/#interrupts">Interrupts</a></li><li><a href="https://soupman123.github.io/SoupOS/#pci">PCI</a></li><li><a href="https://soupman123.github.io/SoupOS/#rtc">RTC</a></li><h4>Miscellaneous</h4><li><a href="https://soupman123.github.io/SoupOS/#credits">Credits</a></li><li><a href="https://soupman123.github.io/SoupOS/#support">Support</a></li><li><a href="https://soupman123.github.io/SoupOS/#legal">Legal</a></li></ul></div><a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 19%" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>';
-               document.body.appendChild(myDiv);
-               
-            </script>
             <h2 id="introduction">Introduction</h2>
             <h3 id="what-is-soupos">What is SoupOS?</h3>
             <p><a href="http://github.com">SoupOS</a> is a computer operating system currently maintained &amp; written by <a href="https://github.com/Soupman123/">Soupman123</a>. SoupOS is a hobby operating system not written to compete with other operating systems, and is currently just a small project.</p>
@@ -124,34 +138,8 @@ Licensor: Soupman123
             </div>
             <p>
                <a href="#top">Back to top.</a>
-               <script>
-                  window.onload=function removeGHPages(){document.evaluate('/html/body/div[4]/footer/p[2]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue.remove();};
-               </script>
             </p>
          </section>
-      </div>
-      <div id="menu">
-         <div id="menu" style="position: absolute; left: 0; margin-left: 2.2%; top: 286px;">
-            <h2>Documentation</h2>
-            <ul>
-               <h4>Introduction</h4>
-               <li><a href="https://soupman123.github.io/SoupOS/#what-is-soupos">What is SoupOS?</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#what-can-soupos-do">What can SoupOS do?</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#how-can-i-get-involved--started">How can I get involved / started?</a></li>
-               <h4>Internals</h4>
-               <li><a href="https://soupman123.github.io/SoupOS/#gdt">GDT</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#preparing-the-memory">Preparing the memory</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#graphics">Graphics</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#interrupts">Interrupts</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#pci">PCI</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#rtc">RTC</a></li>
-               <h4>Miscellaneous</h4>
-               <li><a href="https://soupman123.github.io/SoupOS/#credits">Credits</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#support">Support</a></li>
-               <li><a href="https://soupman123.github.io/SoupOS/#legal">Legal</a></li>
-            </ul>
-         </div>
-         <a class="zip_download_link" style="position: absolute; top: 210px; left: 0; margin-left: 19%" href="https://github.com/Soupman123/SoupOS/archive/master.zip">Download this project as a .zip file</a>
       </div>
       <!-- FOOTER  -->
       <div id="footer_wrap" class="outer">
